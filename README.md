@@ -1,4 +1,6 @@
-# Derive key from did:key
+# DID Derivation Tools
+
+This repo is a collection of DID Derivation tools.
 
 ## Setup
 
@@ -8,7 +10,16 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-## Run
+## Derive an Indy Nym/DID from a Seed
+
+This derivation process follows the same rules ACA-Py follows when deriving a DID from a seed.
+
+```sh
+# Ensure environment is active (see setup)
+python from_seed.py '<seed>'
+```
+
+## Derive key from did:key
 
 ```sh
 # Ensure environment is active
