@@ -14,7 +14,7 @@ def main():
     long_bytes = b58decode(did) + b58decode(short)
     long = b58encode(long_bytes)
 
-    print("Long form verkey:", long)
+    print("Long form verkey:", long.decode())
 
 
 if __name__ == "__main__":
