@@ -1,0 +1,37 @@
+[project]
+name = "did-derive"
+version = "0.1.0"
+description = "DID Derivation utilities for use with Indy especially"
+authors = [
+    {name = "Daniel Bluhm", email = "dbluhm@pm.me"},
+]
+dependencies = [
+    "base58",
+    "aries-askar",
+    "rich>=13.9.4",
+]
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.scripts]
+default = {call = "did_derive.default:main"}
+short-to-long = {call = "did_derive.short_to_long:main"}
+derive-did-key = {call = "did_derive.derive_did_key:main"}
+from-seed = {call = "did_derive.from_seed:main"}
+generate = {call = "did_derive.generate:main"}
+
+[project.scripts]
+did-derive-default = "did_derive.default:main"
+short-to-long = "did_derive.short_to_long:main"
+derive-did-key = "did_derive.derive_did_key:main"
+from-seed = "did_derive.from_seed:main"
+generate = "did_derive.generate:main"
