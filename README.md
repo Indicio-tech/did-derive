@@ -21,7 +21,7 @@ docker pull ghcr.io/indicio-tech/did-derive:latest
 - `from-seed`: generate a DID and verkey from a seed
 - `short-to-long`: convert a DID and short form verkey into a long form verkey
 
-### Generate a new seed
+#### Generate a new seed
 
 This will generate a new seed and display the associated did/nym and verkey.
 
@@ -29,7 +29,7 @@ This will generate a new seed and display the associated did/nym and verkey.
 docker run --rm -it ghcr.io/indicio-tech/did-derive:latest generate
 ```
 
-## Convert short form verkey to long form
+#### Convert short form verkey to long form
 
 This will take a did and short form verkey and turn it into the long form verkey
 
@@ -37,7 +37,7 @@ This will take a did and short form verkey and turn it into the long form verkey
 docker run --rm -it ghcr.io/indicio-tech/did-derive:latest short-to-long <did> <short>
 ```
 
-## Derive an Indy Nym/DID from a Seed
+#### Derive an Indy Nym/DID from a Seed
 
 This derivation process follows the same rules ACA-Py follows when deriving a DID from a seed.
 
@@ -45,7 +45,7 @@ This derivation process follows the same rules ACA-Py follows when deriving a DI
 docker run --rm -it ghcr.io/indicio-tech/did-derive:latest from-seed '<seed>'
 ```
 
-## Derive key from did:key
+#### Derive key from did:key
 
 ```sh
 docker run --rm -it ghcr.io/indicio-tech/did-derive:latest derive-did-key 'did:key:...'
@@ -54,3 +54,11 @@ docker run --rm -it ghcr.io/indicio-tech/did-derive:latest derive-did-key 'did:k
 First value printed is the multikey. The second value is the decoded key in base58 representation.
 
 The second value is the key to use in the configuration.
+
+## Building and Publishing
+
+```sh
+docker build -t ghcr.io/indicio-tech/did-derive:latest .
+docker login ghcr.io
+docker push ghcr.io/indicio-tech/did-derive:latest
+```
