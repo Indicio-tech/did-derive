@@ -1,0 +1,6 @@
+Dockerfile
+.venv
+.pdm-build
+.git
+__pycache__
+.pdm-python
